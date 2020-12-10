@@ -19,7 +19,7 @@ export default {
   },
   locale: {
     baseNavigator: true,
-    default: 'en-US',
+    default: 'zh-CN',
   },
   devServer: {
     port: 8787

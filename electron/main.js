@@ -13,7 +13,7 @@ function createWindow() {
   win = new BrowserWindow({
     autoHideMenuBar: true,
     width: 360,
-    height: 720,
+    height: 480,
     resizable: false,
     useContentSize: true,
     enableRemoteModule: true,
