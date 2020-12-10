@@ -1,0 +1,20 @@
+directories:
+  output: build
+appId: com.unnuo.bookeditor
+productName: BookEditor
+mac:
+  icon: electron/logo.png
+  target: zip
+win:
+  icon: electron/logo.png
+  target: zip
+nsis:
+  oneClick: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+  installerIcon: electron/logo.png
+  uninstallerIcon: electron/logo.png
+  installerHeaderIcon: electron/logo.png
+  createDesktopShortcut: true
+  shortcutName: be
+electronVersion: 6.0.9
