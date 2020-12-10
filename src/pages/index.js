@@ -1,5 +1,5 @@
 import { PureComponent } from 'react';
-import { Button, Input } from 'antd';
+import { Button, Input, Radio } from 'antd';
 import { formatMessage, setLocale, getLocale } from 'umi';
 import styles from './index.css';
 
@@ -7,12 +7,11 @@ const { ipcRenderer } = window.require('electron');
 
 const CHECKSUM_POS = 12;
 const RESET_STATS_POS = 427;
-const DEFAULT_SAVE_DIR = '/Applications/Diablo II/Save';
 
 export default class Acala extends PureComponent {
 
   state = {
-    path: '/Applications/Diablo II/Save',
+    save_dir: '/Applications/Diablo II/Save',
     err: '',
     choices: []
   }
@@ -49,28 +48,32 @@ export default class Acala extends PureComponent {
 
   /**
    * 匹配是否存在存档目录，如果没有，则返回其它存档目录
-   * @param {string} path
-   * @return path
+   * @param {string} save_dir
    */
-  validatePath = (path = this.state.path) => {
-    console.log(path)
-    ipcRenderer.invoke('validatePath', path).then(({ err, path }) => {
+  validatePath = (save_dir = this.state.save_dir) => {
+    ipcRenderer.invoke('validatePath', save_dir).then(({ err, data: save_dir }) => {
       if (err) {
         this._error(err)
       } else {
-        this.listRole(path)
+        this.listRole(save_dir)
       }
     })
   }
 
-  listRole = path => {
-
+  listRole = save_dir => {
+    ipcRenderer.invoke('listRole', save_dir).then(({ err, data }) => {
+      if (err) {
+        this._error(err)
+      } else {
+        this.setState({
+          choices: [...data]
+        })
+      }
+    })
   }
 
-
-
   componentDidMount() {
-    // this.matchPath()
+    this.validatePath()
   }
 
   render() {
@@ -92,13 +95,28 @@ export default class Acala extends PureComponent {
       }
     }
 
+    function Heros(props) {
+      return props.value && (
+        <Radio.Group>
+          {props.value.map(item => <Radio value={item.name} key={item.name}>{item.name}</Radio>)}
+        </Radio.Group>
+      )
+    }
+
     return (
       <div>
-        <Input defaultValue={DEFAULT_SAVE_DIR} size="small" onChange={e => handle(e.target.value)} />
+        <Input defaultValue={this.state.save_dir} size="small" onChange={e => handle(e.target.value)} />
         <Space />
-        <Button size="small" type="primary" onClick={() => handle(this.state.path)}>检测存档目录</Button>
+        <div style={{ textAlign: 'right' }}>
+          <Button size="small" type="primary" onClick={() => handle(this.state.save_dir)}>检测存档目录</Button>
+        </div>
         <Space />
         <Err value={this.state.err} />
+        <Heros value={this.state.choices} />
+        <Space />
+        <div style={{ textAlign: 'right' }}>
+          <Button size="small" type="primary" onClick={() => console.log('test')}>重置</Button>
+        </div>
       </div>
     );
 

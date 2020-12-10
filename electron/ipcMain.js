@@ -10,30 +10,30 @@ const walkdir = require('walkdir');
  */
 module.exports = async () => {
 
-  ipcMain.handle('validatePath', async (event, path) => {
-    if (!fs.existsSync(path)) {
+  ipcMain.handle('validatePath', async (event, save_dir) => {
+    if (!fs.existsSync(save_dir)) {
       return {
         err: '找不到目录',
-        data: path
+        data: save_dir
       }
     } else {
       return {
         err: null,
-        data: path
+        data: save_dir
       }
     }
   })
 
-  ipcMain.handle('listRole', async (event, path) => {
+  ipcMain.handle('listRole', async (event, save_dir) => {
     // 获取所有d2s存档文件
     const files = walkdir
-      .sync(path)
+      .sync(save_dir)
       .filter(file => path.extname(file).toLowerCase() === '.d2s');
 
     const choices = [
       ...files.map(file => ({
-        name: path.basename(item).slice(0, path.basename(item).length - 4),
-        value: file
+        name: path.basename(file).slice(0, path.basename(file).length - 4),
+        path: file
       }))
     ]
 
