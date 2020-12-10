@@ -76,6 +76,9 @@ export default class Acala extends PureComponent {
     this.validatePath()
   }
 
+  // TODO: 选择英雄
+  // TODO: 重置操作
+
   render() {
 
     // 防抖
