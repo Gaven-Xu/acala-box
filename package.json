@@ -1,6 +1,13 @@
 {
+  "name": "acala",
+  "version": "1.0.0",
+  "author": "gaven",
+  "description": "this can reset your hero stats and skill points in Diablo II",
   "private": true,
   "main": "./electron/main.js",
+  "electronDownload": {
+    "mirror": "npm.taobao.org/mirrors/electron/"
+  },
   "scripts": {
     "render": "umi dev",
     "start": "cross-env ENV=develop electron .",
@@ -24,6 +31,5 @@
   },
   "engines": {
     "node": ">=8.0.0"
-  },
-  "version": "1.0.0"
+  }
 }
