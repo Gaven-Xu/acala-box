@@ -3,6 +3,9 @@ const fs = require('fs');
 const path = require('path');
 const walkdir = require('walkdir');
 
+const CHECKSUM_POS = 12;
+const RESET_STATS_POS = 427;
+
 function setChecksome(buffer) {
   buffer.writeUInt32BE(0, CHECKSUM_POS);
   let checksum = 0;

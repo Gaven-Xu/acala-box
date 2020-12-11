@@ -1,9 +1,0 @@
-version: 1.0.0
-files:
-  - url: acala-1.0.0-mac.zip
-    sha512: TpJ3a/uBx76kR93Sflmk6qUr+RonVnSShil41+bdTXBsUIm0BL3K0j/U7PPXpby1RuUbE5fsrsDhQoA3dlSURw==
-    size: 81726131
-    blockMapSize: 86146
-path: acala-1.0.0-mac.zip
-sha512: TpJ3a/uBx76kR93Sflmk6qUr+RonVnSShil41+bdTXBsUIm0BL3K0j/U7PPXpby1RuUbE5fsrsDhQoA3dlSURw==
-releaseDate: '2020-12-11T05:23:33.845Z'

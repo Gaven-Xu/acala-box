@@ -1,10 +1,6 @@
-# Download
-
-[acala_1.0.0_mac]('https://github.com/Gaven-Xu/acala-box/tree/master/build/acala-1.0.0-mac.zip')
-
 # 下载
 
-链接: https://pan.baidu.com/s/1PifsU5Uh7YYD1IUrMdAvCw  密码: kalp
+链接: https://pan.baidu.com/s/1XuHjdIunMiqHzoQbBQc6mg  密码: bl0a
 
 # 说明
 
