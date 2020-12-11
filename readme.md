@@ -2,6 +2,10 @@
 
 [acala_1.0.0_mac]('https://github.com/Gaven-Xu/acala-box/tree/master/build/acala-1.0.0-mac.zip')
 
+# 下载
+
+链接: https://pan.baidu.com/s/1PifsU5Uh7YYD1IUrMdAvCw  密码: kalp
+
 # 说明
 
 阿卡拉，罗格的牧师, 一个正统的女人, 当你需要帮助的时候, 可以从她那里了解更多的信息。
