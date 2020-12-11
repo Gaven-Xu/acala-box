@@ -1,7 +1,7 @@
 directories:
   output: build
 appId: com.unnuo.acala
-productName: 阿卡拉的祝福
+productName: acala
 mac:
   icon: electron/logo.png
   target: zip

@@ -23,8 +23,8 @@ function createWindow() {
   })
 
   // 然后加载应用的 index.html。
-  win.loadURL(winLink)
-  // process.env.ENV === 'develop' ? win.loadURL(winLink) : win.loadFile(winLink);
+  // win.loadURL(winLink)
+  process.env.ENV === 'develop' ? win.loadURL(winLink) : win.loadFile(winLink);
 
   // 打开开发者工具
   // win.webContents.openDevTools()
