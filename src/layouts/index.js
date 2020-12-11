@@ -2,7 +2,7 @@ import 'antd/dist/antd.css';
 
 function BasicLayout(props) {
   return (
-    <div style={{ padding: 10 }}>
+    <div>
       {props.children}
     </div>
   );

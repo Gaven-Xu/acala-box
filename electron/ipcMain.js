@@ -3,6 +3,15 @@ const fs = require('fs');
 const path = require('path');
 const walkdir = require('walkdir');
 
+function setChecksome(buffer) {
+  buffer.writeUInt32BE(0, CHECKSUM_POS);
+  let checksum = 0;
+  for (let i = 0; i < buffer.length; i++) {
+    checksum = (checksum << 1) + buffer.readUInt8(i) + Number(checksum < 0);
+  }
+  buffer.writeInt32LE(checksum, CHECKSUM_POS);
+}
+
 /**
  * 使用reply方法进行消息处理
  * @param {object} event
@@ -40,6 +49,30 @@ module.exports = async () => {
     return {
       err: null,
       data: choices
+    }
+
+  })
+
+  ipcMain.handle('resetPoints', async (event, hero) => {
+
+    let filePath = hero.path;
+
+    const buffer = fs.readFileSync(filePath);
+    const isReset = buffer.readUInt8(RESET_STATS_POS) === 0x2;
+
+    if (isReset) {
+      return {
+        err: '你的勇士不需要重新规划道路',
+        data: hero
+      }
+    } else {
+      buffer.writeUInt8(0x2, RESET_STATS_POS);
+      setChecksome(buffer);
+      fs.writeFileSync(filePath, buffer);
+      return {
+        err: null,
+        data: hero
+      }
     }
 
   })

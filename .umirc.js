@@ -11,7 +11,7 @@ export default {
   dynamicImport: {},
   // plugins
   antd: {
-    compact: true
+    // compact: true
   },
   dva: {
     immer: true,
@@ -23,5 +23,9 @@ export default {
   },
   devServer: {
     port: 8787
+  },
+  theme: {
+    'notification-padding-vertical': '8px',
+    'notification-padding-horizontal': '8px',
   }
 }
