@@ -1,1 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[0],{aArQ:function(n,e,t){"use strict";t.r(e);var a=t("xwgP"),i=t.n(a);t("Kbvn");function r(n){return i.a.createElement("div",{style:{padding:10}},n.children)}e["default"]=r}}]);

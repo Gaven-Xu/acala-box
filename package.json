@@ -4,9 +4,9 @@
   "scripts": {
     "render": "umi dev",
     "start": "cross-env ENV=develop electron .",
-    "build": "cross-env ENV=product umi build && electron-builder --win --x64 --config electron_builder.yml",
-    "build-win": "cross-env ENV=product electron-builder --win --x64 --config electron_builder.yml",
-    "build-mac": "cross-env ENV=product umi build && electron-builder --mac --config electron_builder.yml"
+    "build": "cross-env ENV=product umi build && electron-builder --win --x64 --config electron/electron_builder.yml",
+    "build-win": "cross-env ENV=product electron-builder --win --x64 --config electron/electron_builder.yml",
+    "build-mac": "cross-env ENV=product umi build && electron-builder --mac --config electron/electron_builder.yml"
   },
   "dependencies": {
     "walkdir": "^0.4.1"

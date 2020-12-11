@@ -1,7 +1,7 @@
 directories:
   output: build
-appId: com.unnuo.bookeditor
-productName: BookEditor
+appId: com.unnuo.acala
+productName: 阿卡拉的祝福
 mac:
   icon: electron/logo.png
   target: zip
