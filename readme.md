@@ -1,6 +1,6 @@
 # Download
 
-[acala_1.0.0_mac]('')
+[acala_1.0.0_mac]('https://github.com/Gaven-Xu/acala-box/tree/master/build/acala-1.0.0-mac.zip')
 
 # 说明
 
